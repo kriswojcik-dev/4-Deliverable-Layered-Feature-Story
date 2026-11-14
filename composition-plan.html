@@ -1,59 +1,113 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Composition Plan</title>
-        <style>
-            body{
-                font-family:Arial,sans-serif;
-                line-height:1.5;
-                max-width:90rem;
-                margin:auto;
-                padding:1rem;
-                color:#191919;
-                }
-            table{
-                width:100%;
-                border-collapse:collapse;
-                }
-            th,td{
-                padding:.6rem;
-                border:1px solid #999;
-                text-align:left;
-                vertical-align:top;
-                }
-            th{
-                background:#f1f1f1;
-                }
-        </style>
-        </head>
-        <body>
-            <h1>L6 · Composition Plan</h1>
-            <p>Complete one row for every positioned, layered, clipped, rounded, or shape-wrapped element. Duplicate rows as needed.</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Element</th>
-                        <th>Content purpose</th>
-                        <th>Normal-flow baseline</th>
-                        <th>Chosen technique and why</th>
-                        <th>Containing block / stacking context</th>
-                        <th>Fallback or disengagement</th>
-                        <th>Required test</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Section 1 Featured Image</td>
-                        <td>Shows how much time and money it takes to convert a van into a home.</td>
-                        <td>The image appears between the section heading and first paragraph, with its caption underneath.</td>
-                        <td>I will keep the image in normal flow and use CSS clip-path to create a rounded arch, representing a doorway into the van-life lifestyle while emphasizing the finished interior.</td>
-                        <td>The image stays in normal flow inside its figure. The clip-path creates a stacking context, but no additional z-index is needed.</td>
-                        <td>If clip-path is not supported or is disabled, the image will display with rounded corners using border-radius.</td>
-                        <td>Disable clip-path in DevTools and verify that the image remains visible with rounded corners.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </body>
-        </html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Composition Plan</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
+        max-width: 90rem;
+        margin: auto;
+        padding: 1rem;
+        color: #191919;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 0.6rem;
+        border: 1px solid #999;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        background: #f1f1f1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>L6 · Composition Plan</h1>
+    <p>
+      Complete one row for every positioned, layered, clipped, rounded, or
+      shape-wrapped element. Duplicate rows as needed.
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Element</th>
+          <th>Content purpose</th>
+          <th>Normal-flow baseline</th>
+          <th>Chosen technique and why</th>
+          <th>Containing block / stacking context</th>
+          <th>Fallback or disengagement</th>
+          <th>Required test</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Section 1 Featured Image</td>
+          <td>
+            Shows how much time and money it takes to convert a van into a home.
+          </td>
+          <td>
+            The image appears between the section heading and first paragraph,
+            with its caption underneath.
+          </td>
+          <td>
+            I will keep the image in normal flow and use CSS clip-path to create
+            a rounded arch, representing a doorway into the van-life lifestyle
+            while emphasizing the finished interior.
+          </td>
+          <td>
+            The image stays in normal flow inside its figure. The clip-path
+            creates a stacking context, but no additional z-index is needed.
+          </td>
+          <td>
+            If clip-path is not supported or is disabled, the image will display
+            with rounded corners using border-radius.
+          </td>
+          <td>
+            Disable clip-path in DevTools and verify that the image remains
+            visible with rounded corners.
+          </td>
+        </tr>
+        <tr>
+          <td>Header Badge (.issue-badge)</td>
+          <td>
+            Highlights the financial realities and hidden costs associated with
+            van-life.
+          </td>
+          <td>
+            Without absolute positioning, the badge appears beneath the
+            introduction in normal document flow.
+          </td>
+          <td>
+            I used position: relative on the feature header and position:
+            absolute on the badge to anchor it to the upper-right corner. This
+            creates a purposeful relationship between the badge and the story
+            header.
+          </td>
+          <td>
+            The feature header (.feature-header) is the containing block for the
+            absolutely positioned badge. No additional z-index or stacking
+            context is needed.
+          </td>
+          <td>
+            At viewport widths of 600px or less, position: static returns the
+            badge to normal flow, preventing it from overlapping the heading or
+            introduction.
+          </td>
+          <td>
+            Test at 320px, 768px, and 1280px. Verify that the badge remains
+            within the header, does not cover text, and moves beneath the
+            introduction on smaller screens.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
