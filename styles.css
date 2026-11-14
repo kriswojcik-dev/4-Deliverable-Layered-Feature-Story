@@ -1,22 +1,53 @@
-
 :root {
-    --color-text: #404040;
-    --color-surface: #ffffff;
-    --color-action: #8c1d40;
-    --color-accent: #ffc627;
-    --color-border: #d0d0d0;
-    --color-muted: #5c6670;
+    /* Module 1: Brand Colors */
+    --color-forest: #203D32;
+    --color-moss: #526B4E;
+    --color-sage: #A8B9A0;
+    --color-cream: #F5F1E7;
+    --color-earth: #80674F;
 
-    --space-3: 1rem;
-    --radius: .5rem;
+    /* Module 1: Semantic Colors */
+    --color-background: var(--color-cream);
+    --color-surface: #FFFFFF;
+    --color-text: #252B27;
+    --color-heading: var(--color-forest);
+    --color-action: var(--color-forest);
+    --color-accent: var(--color-sage);
+    --color-border: var(--color-sage);
+    --color-muted: var(--color-moss);
+    --color-focus: var(--color-moss);
+
+    /* Module 1: Spacing */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-12: 3rem;
+
+    /* Module 1: Typography */
+    --font-display: "Cormorant Garamond", Georgia, serif;
+    --font-body: "Inter", Arial, sans-serif;
+    --text-sm: 0.875rem;
+    --text-lg: 1.25rem;
+    --text-display: clamp(2.5rem, 5vw, 4rem);
+    --text-heading: clamp(1.75rem, 3vw, 2.5rem);
+
+    /* Module 1: Shapes and Surfaces */
+    --radius: 0.5rem;
+    --shadow-sm: 0 2px 6px rgba(32, 61, 50, 0.08);
+
+    /* Article Layout */
     --measure: 68ch;
 
-    /* Documented layer scale */
+    /* Module 2: Layer Scale */
     --layer-base: 0;
     --layer-raised: 10;
     --layer-sticky: 20;
     --layer-overlay: 30;
 }
+
 
 /* Global foundation */
 
@@ -30,13 +61,39 @@ html {
     scroll-behavior: smooth;
 }
 
+
 body {
     margin: 0;
     color: var(--color-text);
-    background: var(--color-surface);
-    font-family: Arial, sans-serif;
+    background: var(--color-background);
+    font-family: var(--font-body);
     line-height: 1.6;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-display);
+    line-height: 1.2;
+    font-weight: 600;
+    color: var(--color-heading);
+}
+
+h1 {
+    font-size: var(--text-display);
+}
+
+h2 {
+    font-size: var(--text-heading);
+}
+
+.feature-header h1 {
+    color: var(--color-surface);
+}
+
 
 img {
     display: block;
@@ -54,7 +111,7 @@ img {
 }
 
 .eyebrow {
-    color: var(--color-accent);
+    color: var(--color-sage);
     font-weight: 700;
 }
 
@@ -71,21 +128,22 @@ img {
     inset-inline-end: 1rem;
     padding: .5rem;
     background: var(--color-accent);
-    color: #191919;
+    color: var(--color-forest);
 }
 
 /* L2: Main editorial layout */
 
 main {
-  max-width: 90rem;
-  margin: auto;
-  padding: var(--space-3);
+    max-width: 90rem;
+    margin: auto;
+    padding: var(--space-3);
 }
+
 .story-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 2rem;
-  align-items: start;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
 }
 
 article {
@@ -97,9 +155,10 @@ article section {
     margin-block: 3rem;
     scroll-margin-block-start: 6rem;
 }
+
 .documentation {
-  padding: 1rem;
-  background: #f1f1f1;
+    padding: 1rem;
+    background: #f1f1f1;
 }
 
 /* L3: Story navigation */
@@ -123,6 +182,8 @@ article section {
     padding: 1rem;
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-sm);
 }
 
 .feature-figure img {
@@ -133,14 +194,11 @@ article section {
 
 @supports (clip-path: shape(from 0% 0%, line to 100% 0%, close)) {
     .feature-figure img {
-        clip-path: shape(
-            from 0% 100%,
-            line to 0% 45%,
-            curve to 100% 45%
-                with 0% -15% / 100% -15%,
-            line to 100% 100%,
-            close
-        );
+        clip-path: shape(from 0% 100%,
+                line to 0% 45%,
+                curve to 100% 45% with 0% -15% / 100% -15%,
+                line to 100% 100%,
+                close);
     }
 }
 
@@ -149,7 +207,7 @@ article section {
 .pull-quote {
     margin: 2rem 0;
     padding: 1rem;
-    border-inline-start: .4rem solid var(--color-accent);
+    border-inline-start: 0.4rem solid var(--color-moss);
     font-size: 1.35rem;
     background: var(--color-surface);
 }
@@ -200,10 +258,11 @@ article section {
 
 .budget-card {
     position: relative;
-    background: #f5f0e6;
+    background: var(--color-cream);
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
     padding: 1.5rem;
+
 }
 
 .budget-label {
@@ -211,7 +270,7 @@ article section {
     inset-block-start: -.75rem;
     inset-inline-start: 1rem;
     padding: .35rem .75rem;
-    background: #35513b;
+    background: var(--color-forest);
     color: #fff;
     font-weight: bold;
     font-size: .875rem;
@@ -256,15 +315,17 @@ article section {
 .documentation {
     grid-column: 1 / -1;
     padding: 1rem;
-    background: #f1f1f1;
+    background: var(--color-surface);
 }
 
 /* Keyboard accessibility */
 
+
 :focus-visible {
-    outline: .2rem solid var(--color-accent);
-    outline-offset: .2rem;
+    outline: 3px solid var(--color-focus);
+    outline-offset: var(--space-1);
 }
+
 
 /* Mobile: Header badge returns to normal flow */
 
@@ -314,8 +375,7 @@ article section {
 @media (min-width: 64rem) {
     .budget-layout {
         grid-template-columns:
-            minmax(0, 1fr)
-            minmax(0, 1fr);
+            minmax(0, 1fr) minmax(0, 1fr);
         align-items: start;
     }
 }
