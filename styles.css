@@ -138,9 +138,14 @@ img{
         );
     }
 }
-
-        
         :focus-visible{
             outline:.2rem solid var(--color-accent);
             outline-offset:.2rem;
         }
+@media (max-width: 600px) {
+    .issue-badge {
+        position: static;
+        display: inline-block;
+        margin-top: 1rem;
+    }
+}
