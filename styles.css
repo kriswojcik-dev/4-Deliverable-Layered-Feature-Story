@@ -115,7 +115,7 @@ img{
     .pull-quote{
         position:relative;
         z-index:var(--layer-raised);
-        margin-inline-start:-4rem;
+        margin-inline-start:0;
         background:var(--color-surface);;
     }
     @supports (shape-outside:circle(50%)){
