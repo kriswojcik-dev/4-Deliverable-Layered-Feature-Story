@@ -298,61 +298,62 @@
         values. Both absolutely positioned labels use explicitly positioned
         containing blocks.
       </p>
+      <h3>Browser Support and Progressive Enhancement</h3>
+
+      <p>
+        Browser support was reviewed using MDN Web Docs on
+        November 14, 2026.
+      </p>
+
+      <p>
+        The featured photograph uses clip-path with the shape()
+        function to create an arched silhouette. The enhancement
+        is placed inside an @supports rule. Browsers that do not
+        support the feature display the original image with
+        rounded corners instead.
+      </p>
+
+      <p>
+        The campsite photograph uses shape-outside: circle(50%)
+        and shape-margin to create circular text wrapping on
+        wider screens. If shape-outside is unsupported, the
+        photograph remains floated and text wraps around its
+        rectangular margin box. On smaller screens, the image
+        returns to the normal document flow.
+      </p>
+
+      <p>
+        These fallbacks were tested by disabling the enhanced
+        CSS properties in Chrome DevTools. The page remained
+        readable, and no essential content was lost.
+      </p>
+
+      <h4>Browser Support References</h4>
+      <ul>
+        <li>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/basic-shape/shape">
+            MDN: shape() CSS function
+          </a>
+        </li>
+        <li>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/clip-path">
+            MDN: clip-path
+          </a>
+        </li>
+        <li>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/shape-outside">
+            MDN: shape-outside
+          </a>
+        </li>
+        <li>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/shape-margin">
+            MDN: shape-margin
+          </a>
+        </li>
+      </ul>
+
     </section>
 
-    <h3>Browser Support and Progressive Enhancement</h3>
-
-    <p>
-      Browser support was reviewed using MDN Web Docs on
-      November 14, 2026.
-    </p>
-
-    <p>
-      The featured photograph uses clip-path with the shape()
-      function to create an arched silhouette. The enhancement
-      is placed inside an @supports rule. Browsers that do not
-      support the feature display the original image with
-      rounded corners instead.
-    </p>
-
-    <p>
-      The campsite photograph uses shape-outside: circle(50%)
-      and shape-margin to create circular text wrapping on
-      wider screens. If shape-outside is unsupported, the
-      photograph remains floated and text wraps around its
-      rectangular margin box. On smaller screens, the image
-      returns to the normal document flow.
-    </p>
-
-    <p>
-      These fallbacks were tested by disabling the enhanced
-      CSS properties in Chrome DevTools. The page remained
-      readable, and no essential content was lost.
-    </p>
-
-    <h4>Browser Support References</h4>
-    <ul>
-      <li>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/basic-shape/shape">
-          MDN: shape() CSS function
-        </a>
-      </li>
-      <li>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/clip-path">
-          MDN: clip-path
-        </a>
-      </li>
-      <li>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/shape-outside">
-          MDN: shape-outside
-        </a>
-      </li>
-      <li>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/shape-margin">
-          MDN: shape-margin
-        </a>
-      </li>
-    </ul>
 
   </main>
 </body>
