@@ -123,11 +123,30 @@ img {
     padding: 1rem;
     background: #f1f1f1;
 }
+
 .budget-card {
     background: #f5f0e6;
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
     padding: 1.5rem;
+}
+
+.budget-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.budget-text,
+.budget-card {
+    min-width: 0;
+}
+
+@media (min-width: 64rem) {
+    .budget-layout {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: start;
+    }
 }
 
 @media (min-width:52rem) {
