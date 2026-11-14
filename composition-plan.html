@@ -137,6 +137,81 @@
             readable, does not cover content, and scrolls with the budget card.
           </td>
         </tr>
+
+        <tr>
+          <td>Story Navigation (.story-guide)</td>
+
+          <td>
+            Helps readers move between the two sections of The Price of Freedom
+            without scrolling through the entire article.
+          </td>
+
+          <td>
+            The navigation appears before the article in normal document flow,
+            with links to both sections.
+          </td>
+
+          <td>
+            I used position: sticky to keep the navigation accessible while
+            scrolling on larger screens. CSS Grid creates a separate navigation
+            column.
+          </td>
+
+          <td>
+            The navigation is a Grid item inside main. Its sticky positioning is
+            constrained by the Grid container. No explicit z-index is needed.
+          </td>
+
+          <td>
+            Below 52rem, the navigation returns to normal flow and scrolls with
+            the page, preserving reading space on smaller screens.
+          </td>
+
+          <td>
+            Test at 320px, 768px, and 1280px. Verify sticky behavior at 1280px,
+            normal scrolling on mobile, section boundaries, and keyboard access
+            to both links.
+          </td>
+        </tr>
+
+        <tr>
+          <td>Campsite Photograph (.campsite-figure)</td>
+
+          <td>
+            Illustrates the van-life experience while supporting the discussion
+            of ongoing travel and camping expenses.
+          </td>
+
+          <td>
+            The campsite photograph and photographer credit remain together in a figure
+            before the introductory paragraphs.
+          </td>
+
+          <td>
+            I used border-radius: 50% to create a circular image. On larger
+            screens, float and shape-outside: circle(50%) allow the paragraphs
+            to wrap around the photograph. Shape-margin adds spacing between the
+            image and text.
+          </td>
+
+          <td>
+            The figure participates in normal document flow. On desktop, it
+            floats within the article section. No additional z-index or stacking
+            context is required.
+          </td>
+
+          <td>
+            If shape-outside is unsupported or disabled, text wraps around the
+            figure's rectangular float boundary. Below 52rem, the figure returns
+            to normal flow above the paragraphs.
+          </td>
+
+          <td>
+            Test at 320px, 768px, and 1280px. Disable shape-outside to check
+            readability. Verify the circular crop, image credit, text spacing,
+            and mobile layout.
+          </td>
+        </tr>
       </tbody>
     </table>
   </body>
