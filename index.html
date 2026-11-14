@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width,initial-scale=1" >
     <title>The Price of Freedom</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" >
   </head>
   <body>
     <header class="feature-header">
@@ -153,16 +153,16 @@
             in individual locations can help reduce costs while creating more
             opportunities to explore.
           </p>
+          <p>
+            Vehicle maintenance introduces another layer of financial
+            responsibility. Oil changes, tires, brakes, and unexpected
+            mechanical repairs are no longer simply transportation expenses.
+            When a van is also someone's home, a breakdown can mean losing both
+            mobility and shelter. An emergency repair may also require temporary
+            lodging while the vehicle is being serviced.
+          </p>
           <div class="budget-layout">
             <div class="budget-text">
-              <p>
-                Vehicle maintenance introduces another layer of financial
-                responsibility. Oil changes, tires, brakes, and unexpected
-                mechanical repairs are no longer simply transportation expenses.
-                When a van is also someone's home, a breakdown can mean losing
-                both mobility and shelter. An emergency repair may also require
-                temporary lodging while the vehicle is being serviced.
-              </p>
               <p>
                 Insurance deserves similar attention. Coverage needs can change
                 depending on whether a van is used recreationally or as a
@@ -286,6 +286,34 @@
             Keyboard navigation: Passed. Link can be accessed using the Tab key.
           </li>
         </ul>
+        <h3>Testing and Validation</h3>
+
+        <p>
+          The layout was tested at 320px, 768px, and 1280px, as well as at 200%
+          browser zoom. The article remained readable without horizontal
+          overflow or unwanted overlap.
+        </p>
+
+        <p>
+          Long-heading and doubled-paragraph tests confirmed that the layout
+          accommodates content growth. Disabling CSS preserved a logical reading
+          order, and keyboard testing confirmed visible focus indicators and
+          working links.
+        </p>
+
+        <p>
+          HTML validation passed with zero errors. CSS validation reported five
+          errors involving clip-path: shape(), shape-outside, and shape-margin.
+          These features were inspected in Chrome, and their visual behavior and
+          progressive fallbacks were tested.
+        </p>
+
+        <p>
+          Stacking-context inspection confirmed that the sticky navigation and
+          clipped photograph create stacking contexts without additional z-index
+          values. Both absolutely positioned labels use explicitly positioned
+          containing blocks.
+        </p>
       </section>
     </main>
   </body>
