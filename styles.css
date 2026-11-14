@@ -41,11 +41,9 @@
     /* Article Layout */
     --measure: 68ch;
 
-    /* Module 4: Layer Scale */
+    /* L4: Minimal layer scale */
     --layer-base: 0;
-    --layer-raised: 10;
-    --layer-sticky: 20;
-    --layer-overlay: 30;
+    --layer-detail: 1;
 }
 
 /* Global foundation */
@@ -275,6 +273,7 @@ a:active {
 
 .budget-label {
     position: absolute;
+    z-index: var(--layer-detail);
     inset-block-start: -0.75rem;
     inset-inline-start: 1rem;
     padding: 0.35rem 0.75rem;

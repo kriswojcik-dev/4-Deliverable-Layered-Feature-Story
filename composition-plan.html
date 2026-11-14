@@ -122,11 +122,14 @@
             on the field-note label to create a controlled overlap along the
             card's upper border.
           </td>
+
           <td>
             The budget card (.budget-card) establishes the containing block. The
-            label is positioned relative to the card without requiring an
-            additional z-index.
+            label uses z-index: var(--layer-detail) to create a small,
+            predictable stacking layer above the card border. No arbitrary high
+            z-index values are needed.
           </td>
+
           <td>
             The label remains attached to the budget card at different viewport
             widths. If absolute positioning is disabled, the label returns to

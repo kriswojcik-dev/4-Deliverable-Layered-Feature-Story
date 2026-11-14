@@ -307,6 +307,38 @@
         values. Both absolutely positioned labels use explicitly positioned
         containing blocks.
       </p>
+
+      <h3>L4 · Layering and Stacking Contexts</h3>
+
+      <p>
+        The page uses a minimal layer scale with two tokens:
+        --layer-base (0) and --layer-detail (1).
+        The FIELD NOTE label uses --layer-detail to establish
+        a predictable overlap with its budget card.
+      </p>
+
+      <p>
+        The sticky navigation creates its own stacking context
+        through position: sticky, while the featured image
+        creates one through clip-path. Neither requires an
+        additional z-index because these elements do not
+        compete with overlapping content.
+      </p>
+
+      <p>
+        The header badge uses absolute positioning within
+        its relatively positioned header. At widths of
+        600px or less, it returns to normal document flow.
+        The FIELD NOTE label uses pointer-events: none
+        so its decorative overlap cannot intercept clicks.
+      </p>
+
+      <p>
+        Layering was inspected in Chrome DevTools.
+        Keyboard focus, navigation links, and photograph
+        credits remained accessible and unobscured.
+      </p>
+
       <h3>Browser Support and Progressive Enhancement</h3>
 
       <p>
@@ -390,7 +422,8 @@
       <p>
         ChatGPT was used as an assistant for explaining
         the responsive layout, CSS positioning and
-        stacking contexts, as well as for suggesting testing strategies, identifying and troubleshooting layout issues, and organizing testing
+        stacking contexts, as well as for suggesting testing strategies, identifying and troubleshooting layout issues,
+        and organizing testing
         documentation.
       </p>
       <p>
