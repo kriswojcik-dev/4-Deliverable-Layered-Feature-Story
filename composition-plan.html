@@ -107,6 +107,36 @@
             introduction on smaller screens.
           </td>
         </tr>
+        <tr>
+          <td>Sample Budget Field Note (.budget-label)</td>
+          <td>
+            Identifies the monthly budget as a practical financial reference for
+            aspiring van-lifers.
+          </td>
+          <td>
+            The field-note label appears before the budget heading in normal
+            document flow.
+          </td>
+          <td>
+            I used position: relative on the budget card and position: absolute
+            on the field-note label to create a controlled overlap along the
+            card's upper border.
+          </td>
+          <td>
+            The budget card (.budget-card) establishes the containing block. The
+            label is positioned relative to the card without requiring an
+            additional z-index.
+          </td>
+          <td>
+            The label remains attached to the budget card at different viewport
+            widths. If absolute positioning is disabled, the label returns to
+            normal flow.
+          </td>
+          <td>
+            Test at 320px, 768px, and 1280px. Confirm the label remains
+            readable, does not cover content, and scrolls with the budget card.
+          </td>
+        </tr>
       </tbody>
     </table>
   </body>

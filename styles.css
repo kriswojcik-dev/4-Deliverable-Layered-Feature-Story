@@ -61,7 +61,7 @@ body {
 main {
     display: grid;
     gap: 2rem;
-    max-width: 72rem;
+    max-width: 90rem;
     margin: auto;
     padding: var(--space-3);
 }
@@ -129,6 +129,19 @@ img {
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
     padding: 1.5rem;
+    position: relative;
+}
+
+.budget-label {
+    position: absolute;
+    inset-block-start: -0.75rem;
+    inset-inline-start: 1rem;
+    padding: 0.35rem 0.75rem;
+    background: #35513b;
+    color: white;
+    font-weight: bold;
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
 }
 
 .budget-layout {
