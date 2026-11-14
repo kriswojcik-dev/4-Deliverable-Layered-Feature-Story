@@ -1,15 +1,15 @@
 :root {
     /* Module 1: Brand Colors */
-    --color-forest: #203D32;
-    --color-moss: #526B4E;
-    --color-sage: #A8B9A0;
-    --color-cream: #F5F1E7;
-    --color-earth: #80674F;
+    --color-forest: #203d32;
+    --color-moss: #526b4e;
+    --color-sage: #a8b9a0;
+    --color-cream: #f5f1e7;
+    --color-earth: #80674f;
 
     /* Module 1: Semantic Colors */
     --color-background: var(--color-cream);
-    --color-surface: #FFFFFF;
-    --color-text: #252B27;
+    --color-surface: #ffffff;
+    --color-text: #252b27;
     --color-heading: var(--color-forest);
     --color-action: var(--color-forest);
     --color-accent: var(--color-sage);
@@ -41,13 +41,12 @@
     /* Article Layout */
     --measure: 68ch;
 
-    /* Module 2: Layer Scale */
+    /* Module 4: Layer Scale */
     --layer-base: 0;
     --layer-raised: 10;
     --layer-sticky: 20;
     --layer-overlay: 30;
 }
-
 
 /* Global foundation */
 
@@ -60,7 +59,6 @@
 html {
     scroll-behavior: smooth;
 }
-
 
 body {
     margin: 0;
@@ -94,7 +92,6 @@ h2 {
     color: var(--color-surface);
 }
 
-
 img {
     display: block;
     max-width: 100%;
@@ -126,7 +123,7 @@ img {
     position: absolute;
     inset-block-start: 1rem;
     inset-inline-end: 1rem;
-    padding: .5rem;
+    padding: 0.5rem;
     background: var(--color-accent);
     color: var(--color-forest);
 }
@@ -156,10 +153,6 @@ article section {
     scroll-margin-block-start: 6rem;
 }
 
-.documentation {
-    padding: 1rem;
-    background: #f1f1f1;
-}
 
 /* L3: Story navigation */
 
@@ -171,7 +164,23 @@ article section {
 
 .story-guide a {
     display: block;
-    padding: .4rem;
+    padding: 0.4rem;
+}
+
+/* Module 1: Link states */
+
+a {
+    color: var(--color-action);
+    text-decoration: underline;
+    text-underline-offset: var(--space-1);
+}
+
+a:hover {
+    color: var(--color-moss);
+}
+
+a:active {
+    color: var(--color-earth);
 }
 
 /* L5: Section 1 feature image */
@@ -215,7 +224,7 @@ article section {
 /* L5: Section 2 circular campsite photograph */
 
 .campsite-figure {
-    width: min(45%, 20rem);
+    width: min(75%, 20rem);
     margin: 0 auto 1.5rem;
 }
 
@@ -230,8 +239,8 @@ article section {
 }
 
 .campsite-figure figcaption {
-    margin-top: .5rem;
-    font-size: .875rem;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
     text-align: center;
     color: var(--color-muted);
 }
@@ -262,19 +271,18 @@ article section {
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
     padding: 1.5rem;
-
 }
 
 .budget-label {
     position: absolute;
-    inset-block-start: -.75rem;
+    inset-block-start: -0.75rem;
     inset-inline-start: 1rem;
-    padding: .35rem .75rem;
+    padding: 0.35rem 0.75rem;
     background: var(--color-forest);
     color: #fff;
     font-weight: bold;
-    font-size: .875rem;
-    border-radius: .25rem;
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
 
     /* Decorative label cannot intercept clicks */
     pointer-events: none;
@@ -289,7 +297,7 @@ article section {
 
 .budget-card th,
 .budget-card td {
-    padding: .5rem .25rem;
+    padding: 0.5rem 0.25rem;
     text-align: left;
     vertical-align: top;
     border-bottom: 1px solid var(--color-border);
@@ -306,7 +314,7 @@ article section {
 }
 
 .budget-disclaimer {
-    font-size: .875rem;
+    font-size: 0.875rem;
     color: var(--color-muted);
 }
 
@@ -320,12 +328,10 @@ article section {
 
 /* Keyboard accessibility */
 
-
 :focus-visible {
     outline: 3px solid var(--color-focus);
     outline-offset: var(--space-1);
 }
-
 
 /* Mobile: Header badge returns to normal flow */
 
@@ -340,8 +346,7 @@ article section {
 /* Tablet and desktop enhancements */
 
 @media (min-width: 52rem) {
-
-    main {
+    .story-layout {
         grid-template-columns: 14rem minmax(0, 1fr);
     }
 
@@ -374,8 +379,7 @@ article section {
 
 @media (min-width: 64rem) {
     .budget-layout {
-        grid-template-columns:
-            minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         align-items: start;
     }
 }
