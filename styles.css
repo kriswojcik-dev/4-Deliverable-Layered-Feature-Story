@@ -170,12 +170,9 @@ img {
     .story-guide {
         position: sticky;
         inset-block-start: 1rem;
-        z-index: var(--layer-sticky);
     }
 
     .pull-quote {
-        position: relative;
-        z-index: var(--layer-raised);
         margin-inline-start: 0;
         background: var(--color-surface);
         ;
