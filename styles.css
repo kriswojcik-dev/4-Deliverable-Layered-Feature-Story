@@ -125,28 +125,20 @@ img{
             shape-margin:1rem;}
         }
     }
-    @supports (clip-path: shape(
-    from 8% 50%,
-    curve to 92% 50% with 8% 0% / 92% 0%,
-    close
-)) {
+    
+@supports (clip-path: ellipse(50% 100% at 50% 100%)) {
     .feature-figure img {
         clip-path: shape(
-            from 8% 50%,
-            curve to 92% 50%
-                with 8% -15% from origin / 92% -15% from origin,
-            curve to 78% 85%
-                with 108% 65% from origin / 98% 90% from origin,
-            curve to 48% 92%
-                with 72% 105% from origin / 55% 105% from origin,
-            curve to 20% 85%
-                with 32% 105% from origin / 22% 98% from origin,
-            curve to 8% 50%
-                with -5% 85% from origin / -4% 60% from origin,
+            from 0% 100%,
+            line to 0% 45%,
+            curve to 100% 45%
+                with 0% -15% / 100% -15%,
+            line to 100% 100%,
             close
         );
     }
 }
+
         
         :focus-visible{
             outline:.2rem solid var(--color-accent);
